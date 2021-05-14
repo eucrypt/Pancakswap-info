@@ -1,1 +1,217 @@
 
+{
+  ecosystem {
+   pairCount
+   tokenCount
+   totalVolumeBnb
+   untrackedVolumeUsd
+   totalLiquidityUsd
+   totalLiquidityBnb
+   txCount
+  }
+}
+
+
+
+{
+  tokens(tokenId: "0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82") {
+    data {
+      name
+      symbol
+      decimals
+      totalSupply
+      tradeVolume
+      untrackedVolumeUsd
+      untrackedVolumeUsd
+      txCount
+      totalLiquidity
+      quotePriceInBnb
+      quotePriceInUsd
+      pairs(pageSize: 1) {
+        data {
+          pairId
+          token0 {
+            tokenId
+            symbol
+          }
+          token1 {
+            tokenId
+            symbol
+          }
+          token0Price
+          token1Price
+        }
+      }
+    }
+  }
+}
+
+
+
+{
+ pairs(pairId: "0x0ed8e0a2d99643e1e65cca22ed4424090b8b7458") {
+    data {
+      token0 {
+        name
+        symbol
+        quotePriceInUsd
+      }
+      token1 {
+        name
+        symbol
+        quotePriceInUsd
+      }
+      reserve0
+      reserve1
+      totalSupply
+      reserveBnb
+      reserveUsd
+      token0Price
+      token1Price
+      volumeToken0
+      volumeToken1
+      liquidityProviderCount
+      untrackedVolumeUsd
+      txCount
+      createdAtTimestamp
+      createdAtTimestamp
+      swaps(pageSize: 1) {
+        data {
+          timestamp
+          amountUsd
+        }
+      }
+      mints(pageSize: 1) {
+        data {
+          timestamp
+          amountUsd
+        }
+      }
+    }
+  }
+}
+
+
+
+{
+ transactions(
+   transactionId: "0x142f2fdd474d037cedc46a007cf2a3034631d0c7d246e240ffc432e37f96e619"
+ ) {
+   data {
+     swaps {
+       swapId
+       amountUsd
+     }
+     mints {
+       mintId
+       amountUsd
+     }
+     burns {
+       burnId
+       amountUsd
+     }
+     blockNumber
+     timeStamp
+     transactionId
+   }
+ }
+}
+
+
+
+{
+  liquiditySnapshots(user:"0x000000000051d07a4fb3bd10121a343d85818da6", pageSize: 2) {
+    data {
+      user    
+      pairId
+      liquidityTokenBalance
+      timeStamp
+      block
+      token0PriceUsd
+      token1PriceUsd
+      reserve0
+      reserve1
+      reserveUsd
+      liquidityTokenTotalSupply
+    }
+  }
+}
+
+
+
+{
+  swaps(blockNumber: 4522555, pageSize: 2) {
+    data {
+      swapId
+      transaction {
+        transactionId
+      }
+      timestamp
+      pair {
+        token0 {
+          tokenId
+          symbol
+        }
+        token1 {
+          tokenId
+          symbol
+        }
+      }
+      from
+      amount0In
+      amount1In
+      amount0Out
+      amount1Out
+      to
+      logIndex
+      amountUsd
+    }
+  }
+}
+
+
+
+{
+  mints(transactionId: "0x264d916b355a05cc63f1fca9ae022fde03379fc7f5be0f0e1a66dc40aada9687", pageSize: 2) {
+    data {
+      amount0
+      amount1
+      amountUsd
+      sender
+      pair {
+        pairId
+      }
+      transaction {
+        transactionId
+        timeStamp
+        swaps {
+          swapId
+          amount0In
+          amount0Out
+          amountUsd
+        }
+      }
+    }
+  }
+}
+
+
+
+{
+  burns(
+    transactionId: "0x6cf7abd939a8a068994f5ea61e1dd048fe07a20bca27b02eb6c2fa044349fdec"
+  ) {
+    data {
+      amount0
+      amount1
+      amountUsd
+      timestamp
+      sender
+      to
+      pair {
+        pairId
+        totalSupply
+      }
+    }
+  }
+}
